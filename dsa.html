@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .navigation {
+            width: 175px;
+            background-color: #282828;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            overflow-y: auto;
+            padding-top: 60px;
+        }
+        .navigation ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .navigation ul li {
+            margin-bottom: 10px;
+        }
+        .navigation ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .navigation ul li a:hover {
+            background-color: #333;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .main-content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .main-content p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .footer {
+            background-color: #282828;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .navbar ul li {
+            display: inline;
+        }
+        .navbar ul li a {
+            display: block;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .navbar ul li a.active,
+        .navbar ul li a:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .main-content {
+            margin-top: 20px;
+        }
+        footer {
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            text-align: center;
+        }
+        </style>
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="#prac1">Practical 1</a></li>
+            <li><a href="#prac2">Practical 2</a></li>
+            <li><a href="#prac3">Practical 3</a></li>
+            <li><a href="#prac4">Practical 4</a></li>
+            <li><a href="#prac5">Practical 5</a></li>
+            <li><a href="#prac6">Practical 6</a></li>
+            <li><a href="#prac7">Practical 7</a></li>
+            <li><a href="#prac8">Practical 8</a></li>
+            <li><a href="#prac9">Practical 9</a></li>
+            <li><a href="#prac10">Practical 10</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <section id="prac1">
+            <h2>Sorting Algorithm's</h2>
+            <p><pre>
+
+<h3>1.1 Bubble sort </h3>
+print("Bubble Sort")
+n = int(input("enter the number of elements: "))
+A = []
+for i in range(n):
+    k = int(input())
+    A.append(k)
+#A = [7, 6, 4, 3, 0]
+#n = len(A)
+print("A =", A)
+for pas in range(n-1):
+    print("pass =", pas+1)
+    for i in range(n-pas-1):
+        print("\titeration ",i,":")
+        if A[i]>A[i+1]:
+            temp = A[i+1]
+            A[i+1] = A[i]
+            A[i] = temp
+        print("\t\tA = ", A)
+
+
+<h3>1.2 Selection Sort</h3>
+print("Selection Sort")
+n = int(input("enter the number of elements: "))
+A = []
+for i in range(n):
+    k = int(input())
+    A.append(k)
+#A = [50, 75, 65, 45, 35]
+#n = len(A)
+print("A = ",A)
+for i in range(n-1):
+    min = A[i]
+    flag = 0
+    for j in range(i+1, n):
+        if A[j] < min:
+            min = A[j]
+            pos = j
+            flag = 1
+    if flag == 1:
+        temp = A[i]
+        A[i] = A[pos]
+        A[pos] = temp
+    print("pass = ",i+1)
+    print("\tA = ",A)
+
+                
+<h3>1.3 Insertion sort </h3>
+print("Insertion Sort")
+length = int(input("Enter the no. of elements : "))
+Array = []
+for i in range(length):
+    k = int(input())
+    Array.append(k)
+print("A = ",Array)
+for i in range(1, length):
+    print("Pass  = ",i)
+    temp = Array[i]
+    k = i-1
+    while temp < Array[k] and k > -1:
+        Array[k+1] = Array[k]
+        k -= 1
+    Array[k+1] = temp
+    print("\t\tA = ",Array)
+print("Sorted Array ----- > \nA = ",Array)
+
+            </pre></p>
+        </section>
+        <section id="prac2">
+            <h2>Sorting and Searching Techniques</h2>
+            <p><pre>
+
+<h3>2.1 Merge Sort</h3>
+
+
+
+<h3>2.2 Linear Search</h3>
+print("Linear Search")
+Array = []
+n = int(input("Enter the no. of elements in the array :"))
+for i in range(n):
+    k = int(input())
+    Array.append(k)
+print("A = ",Array)
+data =  int(input("Enter the element to be searched : "))
+flag = 0
+for i in range(n):
+    if Array[i]==data:
+        flag = 1
+        pos = i
+        break
+if flag == 0:
+    print("The element is not present in the array.")
+else:
+    print("The element is present in the array at position : ",pos+1)
+
+
+<h3>2.3 Binary Search</h3>
+print("Binary Search")
+Array = []
+n = int(input("Enter the no. of elements in the array :"))
+for i in range(n):
+    k = int(input())
+    Array.append(k)
+print("A = ",Array)
+data =  int(input("Enter the element to be searched : "))
+flag = 0
+start = 0 
+pos = 0
+end = n-1
+print("Start\tEnd\tMid")
+while start<=end:
+    mid = int((start+end)/2)
+    print(start,"\t",end,"\t",mid)
+    if data == Array[mid]:
+        flag = 1
+        pos = mid
+        break
+    elif data< Array[mid]:
+        end = mid-1
+    else:
+        start = mid+1
+if flag == 0:
+    print("The element is not present in the array.")
+else:
+    print("The element is present in the array at position : ",pos+1)
+
+
+            </pre></p>
+        </section>
+        <section id="prac3">
+            <h2>Heap</h2>
+            <p><pre>
+
+<h3>3.1 Max Heap</h3>
+print("Max Heap")
+a = []
+n = int(input("Enter the no. of elements : "))
+for i in range(n):
+    a.append(0)
+for j in range(n):
+    pos = j
+    newelt = int(input("\nenter the element : "))
+    while a[(pos-1)//2] < = newelt and (pos-1)//2 > -1:
+        a[pos] = a[(pos-1)//2]
+        pos = (pos-1)//2
+    a[pos] = newelt
+    for i in range(j+1):
+        print(a[i],end="   ")
+
+
+<h3>3.2 Min Heap</h3>
+print("Min Heap")
+a = []
+n = int(input("Enter the no. of elements : "))
+for i in range(n):
+    a.append(0)
+for j in range(n):
+    pos = j
+    newelt = int(input("\nenter the element : "))
+    while a[(pos-1)//2] >= newelt and (pos-1)//2 > -1:
+        a[pos] = a[(pos-1)//2]
+        pos = (pos-1)//2
+    a[pos] = newelt
+    for i in range(j+1):
+        print(a[i],end="   ")
+
+            </pre></p>
+        </section>
+        <section id="prac4">
+            <h2>Graphs</h2>
+            <p><pre>
+
+<h3>4.1 Adjacency Matrix</h3>
+print("Graphs : Adjacency Matrix")
+n = int(input("Enter number of vertices :"))
+v = []
+for in in range(n):
+    x = input("enter the names of vertices : ")
+    v.append(x)
+a = []
+for i in range(n):
+    r = []
+    for j in range(n):
+        r.append(0)
+    a.append(r)
+for i in range(n):
+    for j in range(n):
+        print("Is",v[i],"is adjacent to ",v[j],"? 1. yes  2. no")
+        ans = int(input())
+        if ans == 1:
+            a[i][j] = 1
+print("Adjacency Matrix : ")
+for i in range(n):
+    for j in range(n):
+        print(a[i][j],end=" ")
+    print()
+
+
+<h3>4.2 Warshall's Shortest path algorithm</h3>
+print("warshall's shortest path algorithm")
+n= 5
+w = [[0,7,12,9,0],[5,0,0,11,0],[0,9,0,0,7],[0,0,5,0,0][0,8,8,0,0,]]
+s = [[0,7,12,9,1000],[5,0,1000,11,1000],[1000,9,0,1000,7],[1000,1000,5,0,1000],[1000,8,8,1000,0]]
+print("weight matrix")
+for i in range(n):
+    for j in range(n):
+        print("\t",w[i][j],end=" ")
+    print()
+print("s0")
+for i in range(n):
+    for j in range(n):
+        print("\t",s[i][j],end=" ")
+    print()
+for k in range(n):
+    for i in range(n):
+        for j in range(n):
+            if s[i][j]>s[i][k]+s[k][j]:
+                s[i][j] = s[i][k]+s[k][j]
+    print("S",k)
+    for i in range(n):
+        for j in range(n):
+            print("\t",s[i][j],end=" ")
+        print()
+
+
+            </pre></p>
+        </section>
+        <section id="prac5">
+            <h2>Tree</h2>
+            <p><pre>
+
+<h3>5.1 Binary tree </h3>
+print("Binary Tree")
+h = int(input("Height of the tree: "))
+n = (2**(h + 1)) - 1
+print("No. of nodes =", n)
+t = []
+print("Enter the array: ")
+for i in range(n):
+    print(i, ".", end=" ")
+    x = input()
+    t.append(x)
+print("Parent\tLeft\tRight")
+for i in range(n // 2):
+    print(i, ".", end=" ")
+    print(t[i], "\t", t[(2 * i) + 1], "\t", t[(2 * i) + 2])
+    print()
+
+
+<h3>5.2 Binary Search Tree </h3>
+print("Binary Search Tree")
+n = int(input("No. of elements: "))
+h = n - 1
+t = []
+arr_size = (2 ** (h + 1)) - 1
+for i in range(arr_size):
+    t.append(0)
+print("Enter the elements: ")
+for i in range(n):
+    print(i + 1, end=" ")
+    x = int(input())
+    if i == 0:
+        t[i] = x
+    else:
+        root = 0
+        while t[root] != 0:
+            if x < t[root]:
+                root = (2 * root) + 1
+            elif x > t[root]:
+                root = (2 * root) + 2
+        t[root] = x
+print("Parent\tLeft\tRight")
+for i in range(arr_size // 2):
+    if t[i] > 0:
+        print(t[i], "\t", t[(2 * i) + 1], "\t", t[(2 * i) + 2])
+
+            </pre></p>
+        </section>
+        <section id="prac6">
+            <h2>Arrays</h2>
+            <p><pre>
+                
+<h3>6.1 Reverse an array</h3> 
+print("reversing an array : ")
+n = int(input("Enter the number of elements : "))
+A = []
+R_A = []
+print("Enter the elements : ")
+for i in range(n):
+    elt = int(input(""))
+    A.append(elt)
+    R_A.append(0)
+print("Array : ",A)
+for i in range(n):
+    R_A[i] = A[n-(i+1)]
+print("Reversed array : ",R_A)
+
+
+<h3>6.2 Merger two arrays:</h3>
+print("Merging two Arrays")
+n1 = int(input("No. of elements in A1 : "))
+n2 = int(input("No. of elements in A2 : "))
+A1 = []
+A2 = []
+print("Enter the elements of A1 : ")
+for i in range(n1):
+    elt = int(input(""))
+    A1.append(elt)
+print("Enter the elements of A2 : ")
+for i in range(n2):
+    elt = int(input(""))
+    A2.append(elt)
+print("A1 :", A1)
+print("A2 :", A2)
+n = n1 + n2
+A = []
+for i in range(n):
+    A.append(0)
+i = 0
+j = 0
+k = 0
+while i <= n1 - 1 and j <= n2 - 1:
+    if A1[i] < A2[j]:
+        A[k] = A1[i]
+        i += 1
+        k += 1
+    else:
+        A[k] = A2[j]
+        j += 1
+        k += 1
+if i > n1 - 1:
+    while j <= n2 - 1:
+        A[k] = A2[j]
+        j += 1
+        k += 1
+else:
+    while i <= n1 - 1:
+        A[k] = A1[i]
+        i += 1
+        k += 1
+print("Merged Array A :", A)
+
+
+<h3>6.3 Transpose of a matrix </h3>
+print("Transpose of a Matrix")
+m=int(input("Number of Rows : "))
+n=int(input("Number of Columns : "))
+A=[]
+for i in range(m):
+    r=[]
+    for j in range(n):
+        r.append(0)
+    A.append(r)
+print("Enter the elements :")
+for i in range(m):
+    for j in range(n):
+        elt=int(input())
+        A[i][j]=elt
+print("A=")
+for i in range(m):
+    for j in range(n):
+        print(A[i][j],end=" ")
+    print()
+print("A'=")
+for i in range(n):
+    for j in range(m):
+        print(A[j][i],end=" ")
+    print()
+
+
+<h3>6.4 Multiplication of Matrices</h3>
+print("Multiplication of Matrices")
+def create_mat(m,n):
+    X=[]
+    for i in range(m):
+        r=[]
+        for j in range(n):
+            r.append(0)
+        X.append(r)
+    print("Enter the elements :")
+    for i in range(m):
+        for j in range(n):
+            elt=int(input())
+            X[i][j]=elt
+    return X
+def print_mat(X,m,n):
+    for i in range(m):
+        for j in range(n):
+            print(X[i][j],end=" ")
+        print()
+m1=int(input("Number of Rows in A : "))
+n1=int(input("Number of Columns in A : "))
+A=create_mat(m1,n1)
+print("A=")
+print_mat(A,m1,n1)
+m2=int(input("Number of Rows in B : "))
+n2=int(input("Number of Columns in B : "))
+B=create_mat(m2,n2)
+print("B=")
+print_mat(B,m2,n2)
+if n1==m2:
+    C=[]
+    for i in range(m1):
+        r=[]
+        for j in range(n2):
+            r.append(0)
+        C.append(r)
+    for i in range(m1):
+        for j in range(n2):
+            sum=0
+            for k in range(n1):
+                sum+=A[i][k]*B[k][j]
+            C[i][j]=sum
+    print("C=")
+    print_mat(C,m1,n2)
+else:
+    print("Multiplication of A and B is not possible.")
+
+
+<h3>6.5 Addition / Subtraction of Matrices </h3>
+print("Addition / Subtraction of Matrices")
+def create_mat(m,n):
+    X=[]
+    for i in range(m):
+        r=[]
+        for j in range(n):
+            r.append(0)
+        X.append(r)
+    print("Enter the elements :")
+    for i in range(m):
+        for j in range(n):
+            elt=int(input())
+            X[i][j]=elt
+    return X
+def print_mat(X,m,n):
+    for i in range(m):
+        for j in range(n):
+            print(X[i][j],end=" ")
+        print()
+m1=int(input("Number of Rows in A : "))
+n1=int(input("Number of Columns in A : "))
+A=create_mat(m1,n1)
+print("A=")
+print_mat(A,m1,n1)
+m2=int(input("Number of Rows in B : "))
+n2=int(input("Number of Columns in B : "))
+if m1==m2 and n1==n2:
+    B=create_mat(m1,n1)
+    print("B=")
+    print_mat(B,m1,n1)
+    C=[]
+    for i in range(m1):
+        r=[]
+        for j in range(n1):
+            r.append(0)
+        C.append(r)
+    for i in range(m1):
+        for j in range(n1):
+            C[i][j]=A[i][j]+B[i][j]
+    print("A+B=")
+    print_mat(C,m1,n1)
+    for i in range(m1):
+        for j in range(n1):
+            C[i][j]=A[i][j]-B[i][j]
+    print("A-B=")
+    print_mat(C,m1,n1)
+else:
+    print("The number of rows and columns of both matrices should be same.")
+
+            </pre></p>
+        </section>
+        <section id="prac7">
+            <h2>Hashing</h2>
+            <p><pre>
+
+<h3>7.1 Hashing Technique : Division-Remainder Technique</h3>
+print("Hashing Technique : Division Remainder Method")
+m=int(input("Size of the hash table : "))
+n=int(input("Number of Keys : "))
+h=[]
+for i in range(m):
+    h.append(0)
+print("Enter elements")
+for i in range(n):
+    key=int(input())
+    rel_add=key%m
+    if h[rel_add]==0:
+        h[rel_add]=key
+        print("Relative Address =",rel_add)
+    else:
+        print("Relative Address =",rel_add,"(Collision Case)")
+print("\nHash Table")
+print("Index\tKey")
+for i in range(m):
+    print(i,"\t",h[i])
+
+
+<h3>7.2 Collision Resolution Technique : Linear Probing</h3>
+print("Collision Resolution Techniques : Linear Probing")
+m=int(input("Size of the hash table : "))
+n=int(input("Number of Keys : "))
+h=[]
+for i in range(m):
+    h.append(0)
+print("Enter elements")
+for i in range(n):
+    key=int(input())
+    rel_add=key%m
+    if h[rel_add]==0:
+        h[rel_add]=key
+        print("Relative Address =",rel_add)
+    else:
+        print("Relative Address =",rel_add,"(Collision Case)")
+        p=1
+        while h[rel_add]!=0 and p < m:
+            rel_add=((key%m)+p)%m
+            if h[rel_add]==0:
+                h[rel_add]=key
+                print("Relative Address =",rel_add)
+                break
+            else:
+                print("Relative Address =",rel_add,"(Collision Case)")
+            p=p+1
+print("\nHash Table")
+print("Index\tKey")
+for i in range(m):
+    print(i,"\t",h[i])
+
+            </pre></p>
+        </section>
+        <section id="prac8">
+            <h2>Stack</h2>
+           <p><pre>
+
+<h3>8.1 Stack</h3>
+s=[0,0,0,0,0]
+max_n=4
+top=-1
+ans = 1
+def push():
+    global s
+    global top
+    if top==max_n:
+        print("Overflow Condition : Stack is FULL.")
+    else:
+        data=int(input("Enter the element : "))
+        top=top+1
+        s[top]=data
+        print("Stack ", end="")
+        for x in range(top+1):
+            print(s[x], end=" ")
+def pop():
+    global s
+    global top
+    if top==-1:
+        print("Underflow Condition : Stack is EMPTY.")
+    else:
+        data=s[top]
+        print("The element ", data, " is deleted.")
+        top=top-1
+        print("Stack ", end="")
+        for x in range(top+1):
+            print(s[x], end=" ")
+while ans!=3:
+    ans=int(input("\nEnter your choice :\n1.PUSH\n2.POP\n3.EXIT\n"))
+    if ans==1:
+        push()
+    elif ans==2:
+        pop()
+    elif ans==3:
+        print("O.K.")
+    else:
+        print("Please enter proper choice")
+        ans=0
+        
+
+<h3>8.2 Infix to Postfix</h3>
+print("Infix to Postfix")
+def push(elt):
+    global s
+    global top
+    if top==max_n:
+        print("Overflow Condition : Stack is FULL.")
+    else:
+        data=elt
+        top=top+1
+        s[top]=data
+def pop():
+    global s
+    global top
+    if top==-1:
+        print("Underflow Condition : Stack is EMPTY.")
+    else:
+        data=s[top]
+        top=top-1
+    return data
+def display():
+    print("Stack ")
+    for x in range(top+1):
+        print(s[x],end=" ")
+def priority(elt):
+    if elt=="+" or elt=="-":
+        return 1
+    elif elt=="*" or elt=="/":
+        return 2
+    elif elt=="^":
+        return 3
+    else:
+        return 0
+exp = input("Enter the Infix expression : ")
+exp = exp + ")"
+n = len(exp)
+s = []
+for i in range(n):
+    s.append(0)
+max_n = n - 1
+top = -1
+a = "("
+push(a)
+postfix = ""
+display()
+print("\nPostfix Expression")
+print(postfix)
+for i in range(n):
+    a = exp[i]
+    print("\nCharacter Scanned : ", a)
+    if a == "(":
+        push(a)
+        display()
+        print("Postfix Expression")
+        print(postfix)
+    elif a == "+" or a == "-" or a == "*" or a == "/" or a == "^":
+        p = priority(a)
+        p_top_elt = priority(s[top])
+        if p > p_top_elt:
+            while p >= p_top_elt and p_top_elt != 0:
+                y = pop()
+                #print(y)
+                postfix = postfix+y
+                p_top_elt = priority(s[top])
+        push(a)
+        display()
+        print("\nPostfix Expression")
+        print(postfix)
+    elif a == ")":
+        b = s[top]
+        while b != "(":
+            y = pop()
+            postfix = postfix + y
+            b = s[top]
+        pop()  # to pop "("
+        display()
+        print("\nPostfix Expression")
+        print(postfix)
+
+    else:
+        postfix = postfix + a
+        display()
+        print("\nPostfix Expression")
+        print(postfix)
+    
+        
+<h3>8.3 Tower of Hanoi</h3>
+print("Towers of Hanoi")
+def hanoi(n, src, dest, aux):
+    if n == 1:
+        print("1", "\t", src, "\t", dest)
+    else:
+        hanoi(n-1, src, aux, dest)
+        print(n, "\t", src, "\t", dest)
+        hanoi(n-1, aux, dest, src)
+n = int(input("Enter the number of disks : "))
+moves = (2**n) - 1
+print("\nDisk\tFrom\tTo")
+answer = hanoi(n, 'A', 'C', 'B')
+print("No. of Moves =", moves)
+
+
+           </pre></p>
+        </section>
+        <section id="prac9">
+            <h2>Linked list</h2>
+           <p><pre>
+
+<h3>9.1 Searching</h3>
+#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;stdlib.h&gt;
+void main() {
+    struct node {
+    int info;
+    struct node * next;
+    };
+    struct node * new_node, * ptr, * begin = NULL;
+    int item;
+    int option;
+    new_node = (struct node * ) malloc(sizeof(struct node));
+    printf("\nEnter the element : ");
+    scanf("%d", & item);
+    new_node -> info = item;
+    new_node -> next = NULL;
+    begin = new_node;
+    ptr = begin;
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");
+    scanf("%d", & option);
+    while (option != 2) {
+    new_node = (struct node * ) malloc(sizeof(struct node));
+    printf("\nEnter the element : ");
+    scanf("%d", & item);
+    new_node -> info = item;
+
+    new_node -> next = NULL;
+    ptr -> next = new_node;
+    ptr = new_node;
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");
+    scanf("%d", & option);
+    }
+    printf("\nThe Linked List : \n");
+    ptr = begin;
+    while (ptr != NULL) {
+    printf("\t%d", ptr -> info);
+    ptr = ptr -> next;
+    }
+    printf("\nEnter the element to be searched : ");
+    scanf("%d", & item);
+    ptr = begin;
+    while (ptr != NULL) {
+    if (ptr -> info == item) {
+        printf("\nThe element is present in the list.");
+        exit(0);
+    }
+    ptr = ptr -> next;
+    }
+    printf("\nThe element is not present in the list.");
+}
+
+
+<h3>9.2 Reversing</h3>
+#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;stdlib.h&gt; 
+void main() {
+    struct node {
+    int info;
+    struct node * next;
+    };
+    struct node * new_node, * ptr, * ptr1, * ptr2, * ptr3, * begin = NULL;
+    int item;
+    int option;
+    new_node = (struct node * ) malloc(sizeof(struct node));
+    printf("\nEnter the element : ");
+    scanf("%d", & item);
+    new_node -> info = item;
+    new_node -> next = NULL;
+    begin = new_node;
+    ptr = begin;
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");
+    scanf("%d", & option);
+    while (option != 2) {
+    new_node = (struct node * ) malloc(sizeof(struct node));
+    printf("\nEnter the element : ");
+    scanf("%d", & item);
+    new_node -> info = item;
+    new_node -> next = NULL;
+    ptr -> next = new_node;
+    ptr = new_node;
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");
+    scanf("%d", & option);
+    }
+    printf("\nThe Linked List : ");
+    ptr = begin;
+    while (ptr != NULL) {
+    printf("\t%d", ptr -> info);
+    ptr = ptr -> next;
+    }
+    if (begin -> next == NULL) {
+    printf("\nThe list has only one element.");
+    }
+    if (begin -> next != NULL) {
+    ptr1 = begin;
+    ptr2 = ptr1 -> next;
+    ptr3 = ptr2 -> next;
+    }
+    if (ptr3 == NULL) {
+    ptr2 -> next = ptr1;
+    ptr1 -> next = NULL;
+    begin = ptr2;
+    printf("\n\nThe Reversed Linked List : ");
+    ptr = begin;
+    while (ptr != NULL) {
+        printf("\t%d", ptr -> info);
+        ptr = ptr -> next;
+    }
+    }
+    ptr1 -> next = NULL;
+    while (ptr3 -> next != NULL) {
+    ptr2 -> next = ptr1;
+    ptr1 = ptr2;
+    ptr2 = ptr3;
+    ptr3 = ptr3 -> next;
+    }
+    ptr2 -> next = ptr1;
+    ptr3 -> next = ptr2;
+    begin = ptr3;
+    printf("\n\nThe Reversed Linked List : ");
+    ptr = begin;
+    while (ptr != NULL) {
+    printf("\t%d", ptr -> info);
+    ptr = ptr -> next;
+    }
+}
+
+
+<h3>9.3 Sorting</h3>
+#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;stdlib.h&gt;
+void main() {
+    struct node {
+    int info;
+    struct node * pre;
+    struct node * next;
+    };
+    struct node * new_node, * ptr, * ptr1, * ptr2, * begin = NULL;
+    int item, n, option, temp, p, i;
+    new_node = (struct node * ) malloc(sizeof(struct node));
+    printf("\nEnter the element : ");
+    scanf("%d", & item);
+    n = 1;
+    new_node -> info = item;
+    new_node -> pre = NULL;
+    new_node -> next = NULL;
+    begin = new_node;
+    ptr = begin;
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");
+    scanf("%d", & option);
+    while (option != 2) {
+    new_node = (struct node * ) malloc(sizeof(struct node));
+    printf("\nEnter the element : ");
+    scanf("%d", & item);
+    n = n + 1;
+    new_node -> info = item;
+    new_node -> pre = ptr;
+    new_node -> next = NULL;
+    ptr -> next = new_node;
+    ptr = new_node;
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");
+    scanf("%d", &option);
+    }
+    printf("\nThe Linked List : ");
+    ptr = begin;
+    while (ptr != NULL) {
+    printf("\t%d", ptr -> info);
+    ptr = ptr -> next;
+    }
+    printf("\nTotal No. of Passes = %d ", n - 1);
+    if (n == 1) 
+    {
+    printf("\nThere is only one element in the list.");
+    }
+    for (p = 0; p < n - 1; p++) {
+    ptr1 = begin; 
+    ptr2 = begin -> next;
+    for (i = 0; i < n - p - 1; i++) {
+        if (ptr1 -> info > ptr2 -> info) {
+        temp = ptr1 -> info;
+        ptr1 -> info = ptr2 -> info;
+        ptr2 -> info = temp;
+        }
+        ptr1 = ptr2;
+        ptr2 = ptr2 -> next;
+    }
+    }
+    printf("\nThe Sorted Linked List : ");
+    ptr = begin;
+    while (ptr != NULL) {
+    printf("\t%d", ptr -> info);
+    ptr = ptr -> next;
+    }
+}
+           </pre></p>
+        </section>
+        <section id="prac10">
+            <h2>Queue</h2>
+            <p><pre>
+
+<h3>10.1 Queue Operations</h3>
+#include &lt;stdio.h&gt;
+#include &lt;malloc.h&gt;
+#include &lt;stdlib.h&gt;
+void insert();
+void delete();
+void display();
+struct node{
+    int info;
+    struct node *next;
+    };
+struct node *new_node, *front=NULL, *rear, *ptr;
+void main()
+{
+    int item,n=0;
+    int option;
+    while(n != 4){
+        printf("\nEnter your choice : ");
+        printf("\n1.Insert\n2.Delete\n3.Display\n4.Exit\n");
+        scanf("%d",&n);
+        switch(n){
+            case 1:
+            insert();
+            break;
+
+            case 2:
+            delete();
+            break;
+
+            case 3:
+            display();
+            break;
+
+            case 4:
+            exit(0);
+
+            default:
+            printf("\nPlease enter proper choice.\n");
+        }
+    }    
+}
+void insert(){
+    int item;
+    new_node = (struct node *)malloc(sizeof(struct node));
+    printf("\nEnter the element : ");
+    scanf("%d",&item);
+    new_node -> info = item;
+    new_node -> next = NULL;
+    if(front==NULL){
+        front = new_node;
+        rear = new_node;
+    }
+    else{
+        rear -> next = new_node;
+        rear = new_node;
+    }
+}
+void delete(){
+    int data;
+    if(front == NULL){
+        printf("Underflow Condition : The QUEUE is Empty.");
+    }
+    else if(front == rear){
+        data = front -> info;
+        printf("%d is deleted.",data);
+        front = NULL;
+        rear = NULL;
+    }
+    else{
+        data = front->info;
+        printf("%d is deleted.",data);
+        front = front->next;
+    }
+}
+void display(){
+    ptr = front;
+    printf("\n QUEUE : \n");
+    if(ptr == NULL){
+        printf("\nThe QUEUE is Empty.");
+    }
+    else{
+            while(ptr!=NULL){
+                printf("\t%d",ptr->info);
+                ptr = ptr->next;
+            }
+    }
+}
+
+
+<h3>10.2 Circular Queue</h3>
+def insert_q():
+    global front
+    global rear
+    global q
+    flag = 0
+    if front==0 and rear==n-1:
+        print("Overflow Condition : Queue is Full.")
+    elif front==rear+1:
+        print("Overflow Condition : Queue is Full.")
+    elif rear==-1:
+        front=0
+        rear=0
+        flag=1
+    elif rear==n-1:
+        rear=0
+        flag=1
+    else:
+        rear=rear+1
+        flag=1
+    if flag==1:
+        elt=input("Enter the element : ")
+        q[rear]=elt
+    display_q()
+def delete_q():
+    global front
+    global rear
+    global q
+    if front==-1:
+        print("Underflow Condition : Queue is Empty.")
+    else:
+        data=q[front]
+        print(data,"is deleted.")
+        q[front]="-"
+        if front==rear:
+            front=-1
+            rear=-1
+        elif front==n-1:
+            front=0
+        else:
+            front=front+1
+
+def display_q():
+    global front
+    global rear
+    global q
+    print("Front=",front,"Rear=",rear)
+    print(q)
+q = ["", "", "", ""]
+n = len(q)
+front = -1 
+rear = -1 
+option = 0
+while option != 4:
+    option = int(input("\nEnter your choice : \n1.Insert\n2.Delete\n3. Display\n4. Exit\n"))
+    if option == 1:
+        insert_q()
+    elif option == 2:
+        delete_q()
+    elif option == 3:
+        display_q()
+
+
+
+<h3>10.3 Dequeue</h3>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;malloc.h&gt;
+void insert_q();
+void delete_q();
+void display_q();
+struct node{
+    struct node *pre;
+    int info;
+    struct node *next;
+};
+struct node *new_node, *end1= NULL, *end2= NULL;
+void main(){
+    int n = 1, data, option = 1;
+    while(n!=4){
+        printf("\n==========================");
+        printf("\nEnter your choice : ");
+        printf("\n1.Insert\n2.Delete\n3.Display\n4.Exit\n");
+        scanf("%d",&n);
+        switch(n){
+            case 1:
+            insert_q();
+            break;
+
+            case 2:
+            delete_q();
+            break;
+            
+            case 3:
+            display_q();
+            break;
+
+            case 4:
+            exit(0);
+
+            default:
+            printf("\nPlease enter proper choice.\n");
+        }
+    }
+}
+void insert_q(){
+    int data, ans;
+    printf("1. End-1\t2. End-2 : ");
+    scanf("%d",&ans);
+    printf("\nEnter the element : ");
+    scanf("%d",&data);
+    new_node = (struct node*)malloc(sizeof(struct node));
+    new_node -> info = data;
+    new_node -> pre = NULL;
+    new_node -> next = NULL;
+    if(end1 == NULL){
+        end1 = new_node;
+        end2 = new_node;
+    }
+    else if(ans == 1){
+        new_node -> next = end1;
+        end1 -> pre = new_node;
+        end2 = new_node;
+    }
+    else if(ans == 2){
+        new_node -> pre = end2;
+        end2 -> next = new_node;
+        end2 = new_node;
+    }
+}
+void delete_q()
+{
+    int ans;
+    printf("1. End-1\t2. End-2 : ");
+    scanf("%d", &ans);
+
+    if (end1 == NULL) {
+        printf("\nUNDERFLOW : The DEQUE is Empty.");
+    } 
+    else if (end1 == end2) {
+        printf("\nThe element %d is deleted.", end1->info);
+        end1 = NULL;
+        end2 = NULL;
+    }
+        else if (ans == 1) {
+        printf("\nThe element %d is deleted.", end1->info);
+        end1 = end1->next;
+        end1->pre = NULL;
+    }
+    else if(ans == 2) {
+    printf("\nThe element %d is deleted.", end2->info);
+    end2 = end2->pre;
+    end2->next = NULL;
+    }
+}
+void display_q() {
+    struct node *ptr;
+    if (end1 == NULL) {
+        printf("\nThe DEQUE is empty.");
+    } else {
+        ptr = end1;
+        printf("\nDEQUE : \n");
+        while (ptr != NULL) {
+            printf("\t%d", ptr->info);
+            ptr = ptr->next;
+        }
+    }
+}
+
+            </pre></p>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 hashom Documentation</p>
+    </footer>
+</body>
+</html>
